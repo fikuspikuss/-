@@ -21,136 +21,126 @@
             background-color: #F1EFEF;
             color: #191717;
         }
-    
+
         .container {
             margin: 20px;
             padding: 10px;
         }
-    
+
         .tab-content {
             padding: 10px 20px;
             margin: 0 10px;
             cursor: pointer;
-            
+
             border-bottom: none;
             border-radius: 5px 5px 0 0;
-            
         }
-    
+
         .image-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             margin: 20px;
         }
-    
+
         .image-container img {
             max-width: 28%;
             height: auto;
             margin: 1px;
         }
+
         .nav-tabs {
             display: flex;
             flex-direction: row;
         }
 
         .nav-item {
-            margin-right: 35px; /* Додано відступ між вкладками */
+            margin-right: 35px;
         }
 
         .nav-link.animated:hover {
             animation-name: bounce;
             animation-duration: 0.5s;
         }
-            :root
-{
-  --main-colour:  #ffffff;
-  --accent-colour: #000000;
-  --moon-shape-shadow: inset 10px -9px #34306d;
-  --transition: all 0.5s ease;
-}
 
-.dark-mode
-{
-  --main-colour:  #000000;
-  --accent-colour: #ffffff;
-  --moon-shape-shadow: inset 30px 30px #F7EC7D;
-}
+        :root {
+            --main-colour: #ffffff;
+            --accent-colour: #000000;
+            --moon-shape-shadow: inset 10px -9px #34306d;
+            --transition: all 0.5s ease;
+        }
 
-* {transition: var(--transition);}
-body{ background-color: var(--main-colour); }
+        .dark-mode {
+            --main-colour: #000000;
+            --accent-colour: #ffffff;
+            --moon-shape-shadow: inset 30px 30px #F7EC7D;
+        }
 
-h1
-{
-  text-align: center;
-  color: var(--accent-colour);
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-h2
-{
-  text-align: center;
-  color: var(--accent-colour);
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-h3
-{
-  text-align: center;
-  color: var(--accent-colour);
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.tab-content
-{
-color: var(--accent-colour);
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-#reading-tips
-{
-color: var(--accent-colour);
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-#book-reviews
-{
-color: var(--accent-colour);
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+        * {
+            transition: var(--transition);
+        }
 
+        body {
+            background-color: var(--main-colour);
+        }
 
-#container
-{
-  margin: auto;
-  background-color: var(--accent-colour);
-  height: 119px;
-  width: 280px;
-  border-radius: 300px;
-}
+        h1,
+        h2,
+        h3 {
+            text-align: center;
+            color: var(--accent-colour);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-#container > div
-{
-  position: relative;
-  top: 20px;
-  left: 20px;
-  background-color: var(--main-colour);
-  height: 80px;
-  width: 80px;
-  border-radius: 300px;
-  transition: transform 0.5s ease, var(--transition);
-}
+        .tab-content {
+            color: var(--accent-colour);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-.dark-mode-active > div{ transform: translateX(160px);}
+        #reading-tips,
+        #book-reviews {
+            color: var(--accent-colour);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-#container:hover{ cursor: pointer;}
+        #container {
+            margin: auto;
+            background-color: var(--accent-colour);
+            height: 119px;
+            width: 280px;
+            border-radius: 300px;
+        }
 
-#moon-shape
-{
-  position: absolute;
-  top: 20px;
-  left: 19px;
-  width: 40.5px;
-  height: 40.5px;
-  border-radius: 50%;
-  box-shadow: var(--moon-shape-shadow);
-}
-#scrollToTopBtn {
+        #container>div {
+            position: relative;
+            top: 20px;
+            left: 20px;
+            background-color: var(--main-colour);
+            height: 80px;
+            width: 80px;
+            border-radius: 300px;
+            transition: transform 0.5s ease, var(--transition);
+        }
+
+        .dark-mode-active>div {
+            transform: translateX(160px);
+        }
+
+        #container:hover {
+            cursor: pointer;
+        }
+
+        #moon-shape {
+            position: absolute;
+            top: 20px;
+            left: 19px;
+            width: 40.5px;
+            height: 40.5px;
+            border-radius: 50%;
+            box-shadow: var(--moon-shape-shadow);
+        }
+
+        #scrollToTopBtn {
             position: fixed;
             bottom: 30px;
             right: 30px;
@@ -165,29 +155,24 @@ color: var(--accent-colour);
         }
 
         #scrollToTopBtn::before {
-            content: "\2191"; /* Символ стрілочки вгору */
+            content: "\2191";
         }
-
     </style>
+
     <script>
         const toggleBtn = document.querySelector("#container");
         const root = document.querySelector(":root");
-        
+
         toggleBtn.addEventListener("click", e => {
             toggleBtn.classList.toggle("dark-mode-active");
             root.classList.toggle("dark-mode");
         });
-        </script>
-        
-        <button id="scrollToTopBtn" onclick="scrollToTop()"></button>
 
-    <!-- Підключено Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
 
-    <script>
-        // Вивід кнопки, коли користувач прокручує сторінку вниз
         window.onscroll = function () {
             scrollFunction();
         };
@@ -202,11 +187,15 @@ color: var(--accent-colour);
             }
         }
 
-        // Прокрутка вверх при натисканні кнопки
-        function scrollToTop() {
-            document.body.scrollTop = 0; // Для Safari
-            document.documentElement.scrollTop = 0; // Для Chrome, Firefox, IE та Opera
-        }
+        $(document).ready(function () {
+            $('#myTabs').find('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                var target = $(e.target).attr("href");
+                if (target === "#my-bookshelf") {
+                    // Додайте свій код для обробки вкладки "my-bookshelf"
+                }
+                // Додайте аналогічне оброблення для інших вкладок за потреби
+            });
+        });
     </script>
 
     <header>
@@ -214,7 +203,7 @@ color: var(--accent-colour);
     </header>
     
 
-    <ul class="nav nav-tabs">
+    <ul class="nav nav-tabs" id="myTabs">
         <li class="nav-item">
             <a class="nav-link" id="my-library-tab" data-toggle="tab" href="#my-library">Моя бібліотека</a>
         </li>
@@ -232,7 +221,6 @@ color: var(--accent-colour);
 
 
     <div class="tab-content">
-        
 
 
         <div class="tab-pane fade" id="my-library">
